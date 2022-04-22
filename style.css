@@ -1,0 +1,347 @@
+:root {
+    --light:#36BFB1;
+    --semiLight: #038C73;
+    --semiDark: #02735E ;
+    --dark: #014034 ;
+    --black: hsl(0, 0%, 5%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--black);
+}
+
+.container{
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/*------ Navbar-inicio------ */
+
+.navbar{
+    display: block;
+    position: fixed;
+    width: 100%;
+    background-color: var(--black);
+}
+
+.logo{
+    width: 250px;
+
+}
+
+#navbar-right{
+    display: inline;
+    
+}
+
+#menu{
+    list-style: none;
+    float: right;
+    margin-top: 10px;
+    margin-right: 40px;
+}
+
+.nav-item{
+    display: inline-block;
+    margin: 20px;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 25px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover{
+    color: var(--light);
+}
+/*------ NAVBAR-FIM------ */
+
+/* ---- HOME-INICIO ---- */
+.home{
+    display: flex;
+    color: #FFFFFF;
+    background: url(./imagens/homem-caucasiano-trabalhando-disparar_53876-30174.webp) no-repeat center; 
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+}
+
+.home .max-width{
+    margin: auto;
+}
+
+.home .home-content .text-1{
+    font-size: 80px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.home .home-content .text-2{
+    font-size: 30px;
+    text-align: center;
+}
+
+.home .home-content a{
+    display: inline-block;
+    background: var(--light);
+    color: var(--black);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 12px 36px;
+    text-decoration: none;
+    margin-left: 200px;
+    margin-top: 20px;
+    border: 2px solid var(--light); 
+    border-radius: 10px;
+}
+
+.home .home-content a:hover{
+    color: #FFF;
+    background: var(--dark);
+    border: 2px solid var(--dark);
+}
+/*------ HOME-FIM------ */
+
+.mobile-menu-icon{
+    display: none;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+/*------ RESPONSIVO-MOBILE----- */
+@media screen and (max-width: 800px) {
+/*------ NAVBAR-MENU-INICIO------ */
+    .nav-item{
+        display: none;
+    }
+
+    #menu{
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        background: var(--black);
+        z-index: 1000;
+        text-align: center;
+        height: 0px;
+        transition: .6s;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+
+    #menu .nav-item{
+        display: block;
+        padding: 30px;
+        border-bottom: 2px solid;
+        
+    }
+
+    #navbar-right.active #menu{
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    .mobile-menu-icon{
+        display: block;
+        float: right;
+        margin-top: 30px;
+        margin-right: 20px;
+    }
+
+    #btn-mobile{
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem; 
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: .5rem;
+    }
+
+    #icon-menu{
+        display: block;
+        border-top: 2px solid;
+        width: 25px;
+        color: #FFF;
+    }
+
+    #icon-menu::after, #icon-menu::before{
+        content: "";
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+
+    #navbar-right.active #icon-menu{
+        border-top-color: transparent;
+
+    }
+
+    #navbar-right.active #icon-menu::after{
+        transform: rotate(135deg);
+    }
+
+    #navbar-right.active #icon-menu::before{
+        transform: rotate(-135deg);
+        top: 7px;
+    }
+
+/*------ NAVBAR-MENU-FIM------ */
+
+
+/*------ HOME-INICIO------ */
+    .home .home-content .text-1{
+        text-align: center;
+        font-size: 60px;
+    }
+
+    .home .home-content .text-2{
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .home .home-content a{
+        margin-left: 150px;
+    }
+
+    .open{
+        display: block;
+    }
+/*------ HOME-FIM------ */
+}
+
+@media screen and (max-width: 500px){
+/*------ HOME-INICIO------ */
+    .home .home-content .text-1{
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .home .home-content .text-2{
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .home .home-content a{
+        margin-left: 100px;
+    }
+/*------ HOME-FIM------ */
+}
+
+@media screen and (max-width: 400px){
+/*------ HOME-INICIO------ */
+    .home .home-content .text-1{
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .home .home-content .text-2{
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .home .home-content a{
+        margin-left: 80px;
+    }
+
+    .home{
+        display: flex;
+        color: #FFFFFF;
+        background: url(./imagens/homem-caucasiano-trabalhando-disparar_53876-30174.webp) no-repeat center; 
+        background-size: cover;
+        width: 100%;
+        height: 700px;
+    }
+/*------ HOME-FIM------ */
+}
+
+@media screen and (max-width: 350px){
+/*------ HOME-INICIO------ */
+    .home .home-content .text-1{
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .home .home-content .text-2{
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .home .home-content a{
+        margin-left: 75px;
+    }
+/*------ HOME-FIM------ */
+}
+
+@media screen and (max-width: 330px){
+/*------ NAVBAR-MENU-INICIO------ */
+    .logo{
+        width: 170px;
+    }
+
+    
+    .mobile-menu-icon{
+        display: block;
+        float: right;
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+    
+    #menu{
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 55px;
+        background: var(--black);
+        z-index: 1000;
+        text-align: center;
+        height: 0px;
+        transition: .6s;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+/*------ NAVBAR-MENU-FIM------ */
+
+/*------ HOME-INICIO------ */
+    .home{
+        display: flex;
+        color: #FFFFFF;
+        background: url(./imagens/homem-caucasiano-trabalhando-disparar_53876-30174.webp) no-repeat center; 
+        background-size: cover;
+        width: 100%;
+        height: 600px;
+    }
+
+    .home .home-content .text-1{
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .home .home-content .text-2{
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .home .home-content a{
+        margin-left: 35px;
+    }
+/*------ HOME-FIM------ */
+}
