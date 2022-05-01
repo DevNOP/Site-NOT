@@ -96,7 +96,6 @@ body{
     display: inline-block;
     background: var(--light);
     color: var(--black);
-    font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 600;
     font-size: 20px;
     padding: 12px 36px;
@@ -119,6 +118,7 @@ footer {
     padding: 60px;
     color: var(--black);
     background-color: var(--light);
+    text-align: center;
 }
 
 footer > h3 {
@@ -126,8 +126,8 @@ footer > h3 {
     font-size: 1.5em;
 }
 
-footer > img {
-    margin-top: 5px;
+.instagram {
+    margin: 10px;
 }
 /* ------ FOOTER-FIM ------ */
 
